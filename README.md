@@ -33,7 +33,7 @@
 <li> You also need to create a Twitter Developer account. After creating Twitter Developer account, you will get 4 keys: API key, API Secret key, Access token, Access token secret.
 <li> Copy these 4 keys in line 19, 20, 21 and 22 respectively in TweetAnalysis.py file.
 <li> In line 42, add the path where you want to save your InputTweets.xlsx file.
-<li> Save the changes and run TweetAnalysis.py file
+<li> Save the changes and run TweetAnalysis.py file.
 <li> In terminal you will find top 10 locations with their tweet counts. In InputTweets.xlsx, all 1000 extracted tweets will be saves and in Output.txt top 10 locations with their tweet counts will be saved.
 </ol>
 
