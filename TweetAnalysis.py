@@ -6,7 +6,7 @@ import openpyxl
 
 
 
-client = Algorithmia.client("api_key")												## API key ##
+client = Algorithmia.client("api_key")												## Algorithmia API key ##
 
 
 
@@ -14,9 +14,9 @@ client = Algorithmia.client("api_key")												## API key ##
 def pull_tweets():
     input = {
         "query": "coronavirus",                                                        ## Keyword for searching ##
-        "numTweets": "1000",                                                             ## Number of tweets ##
+        "numTweets": "1000",                                                           ## Number of tweets to be retrieved ##
         "auth": {
-            "app_key": 'consumer_key',                                      ## Twitter keys ##
+            "app_key": 'consumer_key',                                                 ## Twitter keys ##
             "app_secret": 'consumer_secret_key',
             "oauth_token": 'access_token',
             "oauth_token_secret": 'access_token_secret'
@@ -27,7 +27,7 @@ def pull_tweets():
     result = twitter_algo.pipe(input).result
     tweet_list = [tweets['text'] for tweets in result]
 
-    workbook = openpyxl.Workbook()                                                  ## Excel sheet for entering tweets ##
+    workbook = openpyxl.Workbook()                                                     ## Excel sheet for entering tweets ##
     sheet = workbook.active
     sheet.title = "Tweets"
     cell1 = sheet.cell(row=1, column=1)
@@ -39,7 +39,7 @@ def pull_tweets():
         c1.value = result[i]['created_at']
         c2 = sheet.cell(row=i+2, column=2)
         c2.value = result[i]['text']
-    workbook.save(r"your_file_path")    		## Add the project older path here Eg. C:\Users\Ankita\Desktop\Coronavirus\InputTweets.xlsx  (InputTweets.xlsx is the file name) ##
+    workbook.save(r"your_file_path")    	    ## Add the project older path here Eg. C:\Users\Ankita\Desktop\Coronavirus\InputTweets.xlsx  (InputTweets.xlsx is the file name) ##
     return tweet_list
 
 

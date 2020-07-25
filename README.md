@@ -4,7 +4,8 @@
 <li> This project uses Named Entity Recognition (NER) for analysis of tweets from Twitter. At a time, 1000 realtime tweets are extracted from Twitter based on given keyword.
 <li> NER is performed for determining top 10 locations which might be affected the most due to Covid-19 pandemic.
 <li> Reference of the code is taken from <i>Source: https://algorithmia.com/blog/text-mining-tweets-named-entity-recognition</i>
-<li> For more details of the project, refer <i>Project Report.pdf</i> file.
+<li> For demo of this project refer <b><i>Tweet_Analysis_Demo.mp4</i></b> file.
+<li> For more details of the project, refer <b><i>Project Report.pdf</i></b> file.
 </ul>
 
 ## Prerequisites
@@ -37,6 +38,4 @@
 </ol>
 
 ## Note
-The program extracts 1000 tweets from Twitter. Sometime it may happen that it is not printing any output.
-That is because it is not getting any LOCATION in those 1000 extracted tweets. It might have got NAME
-or ORGANIZATION in those tweets. In such cases, run the program again for getting results.
+The program extracts 1000 tweets from Twitter. Sometime it may happen that it is not printing any output. That is because it is not getting any LOCATION in those 1000 extracted tweets. It might have got NAME or ORGANIZATION in those tweets. In such cases, run the program again for getting results.
