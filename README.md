@@ -1,41 +1,80 @@
-# Tweet Analysis using NER
+## Purpose
+---
 
-<ul>
-<li> This project uses Named Entity Recognition (NER) for analysis of tweets from Twitter. At a time, 1000 realtime tweets are extracted from Twitter based on given keyword.
-<li> NER is performed for determining top 10 locations which might be affected the most due to Covid-19 pandemic.
-<li> Reference of the code is taken from <i>Source: https://algorithmia.com/blog/text-mining-tweets-named-entity-recognition</i>
-<li> For demo of this project refer <b><i>Tweet_Analysis_Demo.mp4</i></b> file.
-<li> For more details of the project, refer <b><i>Project Report.pdf</i></b> file.
-</ul>
+Sample deployment at [tsecwebapp.netlify.com](https://tsecwebapp.netlify.com) <br>
+This is a web app for a school college to provide one way communication between college staff (read teachers, HODs, Principal...) and students.
 
-## Prerequisites
+### Sharing methods include
+<li>Text
+<li>Media
+<li>Rich Text
+
+### Credentials for testing on https://tsecwebapp.netlify.com
+```
+student login => username: nilesh@gmail.com           password: nilesh123
+teacher login => username: drnilesh@gmail.com         password: nilesh123
+```
+
+### screenshots
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|<img src="screenshots/landing.png" width="500"> | <img src="screenshots/circulars.png" width="500"><br> |
+<img src="screenshots/library.png" width="500"> | <img src="screenshots/richtextnotice.png" width="500"><br> |
+<img src="screenshots/createnewnotice.png" width="500"> | <img src="screenshots/richtextediting.png" width="500"><br> |
+<img src="screenshots/medianotice.png" width="500"> |
+
+## Technolgy Stack
+---
+<li>React JS (v16)
+<li>Firebase
+
+## Contributing
+### setting up
 <ol>
-<li> Install "tweepy" module with command:
+<li>Clone this repository or download zip(and extract)
+<li>Navigate to project folder in terminal and type
 
-        pip install tweepy
+        npm install
 
-<li> Install "Algorithmia" module with command:
+<li>
 
-        pip install algorithmia
+Create your firebase project at
+[firebase console](https://console.firebase.google.com/)
+<li>
 
-<li> Install "openpyxl" module with command:
+Replace firebase credentials in `/src/config/firebaseConfig.js` with your credentials from firebase console
 
-        pip install openpyxl
+<li>Enable email-signin under Firebase Auth. Create Two Users.
 
-</ol>
+<li>In your Realtime Database create the following structure
 
-## How to run the project
-<ol>
-<li> Clone the project and open TweetAnalysis.py file.
-<li> There are two files: "InputTweet.xlsx" which contains 1000 sample input tweets and "Output.txt" which contains sample output.
-<li> You need to first create an account in Algorithmia. You can go at <i>https://algorithmia.com/signup</i> and create an account.
-<li> After creating account, you will get an API key in your dashboard. Copy and paste that API key in line number 9 in TweetAnalysis file.
-<li> You also need to create a Twitter Developer account. After creating Twitter Developer account, you will get 4 keys: API key, API Secret key, Access token, Access token secret.
-<li> Copy these 4 keys in line 19, 20, 21 and 22 respectively in TweetAnalysis.py file.
-<li> In line 42, add the path where you want to save your InputTweets.xlsx file.
-<li> Save the changes and run TweetAnalysis.py file.
-<li> In terminal you will find top 10 locations with their tweet counts. In InputTweets.xlsx, all 1000 extracted tweets will be saves and in Output.txt top 10 locations with their tweet counts will be saved.
-</ol>
+```
+{
+        users:{
+                <uid_1>:{
+                        name: "xyz_stud",
+                        rollno: 63,
+                        branch: "IT",
+                        balance: 0,
+                        type: "student",
+                        class: "B2",
+                        year: "BE",
+                        photo: <a_photo_url>
+                },
+                <uid_2>:{
+                        name: "pqr_teach",
+                        balance: 0,
+                        department: "IT",
+                        type: "teacher",
+                        photo: <a_photo_url>
+                }
+        }
+}
 
-## Note
-The program extracts 1000 tweets from Twitter. Sometime it may happen that it is not printing any output. That is because it is not getting any LOCATION in those 1000 extracted tweets. It might have got NAME or ORGANIZATION in those tweets. In such cases, run the program again for getting results.
+```
+
+<li>Navigate to project folder in terminal and type
+
+        npm start
+
+<li>You are all set.
